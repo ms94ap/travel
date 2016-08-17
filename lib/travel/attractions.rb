@@ -1,1 +1,6 @@
-attractions.rb
+class Travel::Attractions
+	
+
+
+	
+end
