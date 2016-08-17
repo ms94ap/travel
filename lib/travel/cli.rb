@@ -1,13 +1,14 @@
 class Travel::CLI
 
 	def call 
-		puts "Best of: "
+		puts "Welcome to Travelers'Awards for #{Time.now.year}"
 
 		list_all
 	end
 
-	def list_allhotels
-		puts "All Hotels"
+	def start
+		puts "please select category" #check hwo to list
+		#input = gets.strip.to_i
 	end
 
 	def all_inclusive_resorts
