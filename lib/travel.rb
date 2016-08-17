@@ -1,5 +1,2 @@
-require "travel/version"
-
-module Travel
-  # Your code goes here...
-end
+require_relative "./travel/version"
+require_relative "./travel/cli"
