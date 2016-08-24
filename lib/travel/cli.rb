@@ -20,6 +20,10 @@ class Travel::CLI
 	end
 
 	def beaches
+		Travel::Scraper.scrape_beaches.each.with_index(1) do |winner, index|
+		 	puts "#{index}: #{winner.name} - #{winner.location}, #{winner.best_time}"
+		end
+		return nil
 	end
 
 	def destinations
