@@ -55,6 +55,10 @@ class Travel::CLI
 
 
 	def islands
+    Travel::Scraper.scrape_islands.with_index(1) do |winner, index|
+      puts "#{index}: #{winner.name}"
+    end
+    return nil
 	end
 
 	def landmarks
