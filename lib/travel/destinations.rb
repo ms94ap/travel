@@ -1,8 +1,7 @@
 class Destination
-	attr_accessor :name, :location
+	attr_accessor :name
   
-	def initialize(name, location)
+	def initialize(name)
 		@name = name 
-		@location = location
 	end
 end

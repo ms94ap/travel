@@ -34,7 +34,7 @@ class Travel::CLI
 
 	def destinations
     Travel::Scraper.scrape_destinations.each.with_index(1) do |winner, index|
-      puts "#{index}: #{winner.name} - #{winner.location}"
+      puts "#{index}: #{winner.name}"
     end
     return nil
 	end
@@ -45,6 +45,14 @@ class Travel::CLI
     end
     return nil
 	end
+
+  def hotels
+    Travel::Scraper.scrape_hotels.with_index(1) do |winner, index|
+      puts "#{index}: #{winner.name} - #{winner.location}"
+    end
+    return nil
+  end
+
 
 	def islands
 	end

@@ -3,16 +3,17 @@ require_relative './attractions'
 require_relative './all_inclusive_resorts'
 require_relative './destinations'
 require_relative './destinations_on_the_rise'
+require_relative './hotels'
 
 class Travel::Scraper
 	
   def list
     [
       "beaches",
-      "attractions"
-      "all_inclusive_resorts"
-      "destinations"
-      "destinations_on_the_rise"
+      "attractions",
+      "all_inclusive_resorts",
+      "destinations",
+      "destinations_on_the_rise",
     ]
   end
 
@@ -34,6 +35,10 @@ class Travel::Scraper
 
   def destinations_on_the_rise
     self.destinations_on_the_rise
+  end
+
+  def hotels
+    self.scrape_hotels
   end
 
 
@@ -75,10 +80,9 @@ class Travel::Scraper
 		doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-Destinations"))
 		category = doc.css("h1.laurelhdr").text
 
-    winners = doc.css("div.posRel.tcInner").map do |winner|
+    winners = doc.css("div.posRel.tcInner.withMeta.tcActive").map do |winner|
       name = winner.css(".mainName a").first.text
-      location = winner.css(".smaller a").first.text
-      Destination.new(name, location)
+      Destination.new(name)
     end
 	end
 
@@ -92,21 +96,24 @@ class Travel::Scraper
     end
 	end
 
-	# def self.scrape_hotels
-	# 	doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice"))
-	# 	category =
-	# 	position =
-	# 	name =
-	# 	location =
-	# end
+	def self.scrape_hotels
+		doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-Hotels"))
+		category = doc.css("h1.laurelhdr").text
 
-	# def self.scrape_islands
-	# 	doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice"))
-	# 	category =
-	# 	position =
-	# 	name =
-	# 	location =
-	# end
+    winners = doc.css("div.posRel.tcInner.tcActive").map do |winner|
+      name = winner.css(".mainName.extra a").first.text
+      location = winner.css(".smaller a").first.text
+      Hotel.new(name, location)
+    end
+	end
+
+	def self.scrape_islands
+		doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice"))
+		category =
+		position =
+		name =
+		location =
+	end
 
 	# def self.scrape_islands
 	# 	doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice"))
