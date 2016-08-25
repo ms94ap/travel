@@ -62,6 +62,10 @@ class Travel::CLI
 	end
 
 	def landmarks
+    Travel::Scraper.scrape_landmarks.with_index(1) do |winner, index|
+      puts "#{index}: #{winner.name}- #{winner.location}"
+    end
+    return nil
 	end
 
 	def museums
