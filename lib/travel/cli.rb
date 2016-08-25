@@ -12,7 +12,7 @@ class Travel::CLI
 	end
 
 	def all_inclusive_resorts
-    Travel::Scraper.sscrape_all_inclusive_resorts.each.with_index(1) do |winner, index|
+    Travel::Scraper.scrape_all_inclusive_resorts.each.with_index(1) do |winner, index|
       puts "#{index}: #{winner.name} - #{winner.location}"
     end
     return nil
@@ -40,6 +40,10 @@ class Travel::CLI
 	end
 
 	def destinations_on_the_rise
+    Travel::Scraper.scrape_destinations_on_the_rise.each.with_index(1) do |winner, index|
+      puts "#{index}: #{winner.name}"
+    end
+    return nil
 	end
 
 	def islands

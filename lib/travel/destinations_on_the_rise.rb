@@ -1,1 +1,7 @@
-destinations_on_the_rise.rb
+class DestinationOntheRise
+  attr_accessor :name
+  
+  def initialize(name)
+    @name = name 
+  end
+end
