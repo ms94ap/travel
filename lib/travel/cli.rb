@@ -69,9 +69,17 @@ class Travel::CLI
 	end
 
 	def museums
+    Travel::Scraper.scrape_museums.with_index(1) do |winner, index|
+      puts "#{index}: #{winner.name}- #{winner.location}"
+    end
+    return nil
 	end
 
 	def restaurants
+    Travel::Scraper.scrape_restaurants.with_index(1) do |winner, index|
+      puts "#{index}: #{winner.name}- #{winner.location} - #{winner.cuisine}"
+    end
+    return nil
 	end
 
 
