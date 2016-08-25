@@ -33,6 +33,10 @@ class Travel::CLI
 	end
 
 	def destinations
+    Travel::Scraper.scrape_destinations.each.with_index(1) do |winner, index|
+      puts "#{index}: #{winner.name} - #{winner.location}"
+    end
+    return nil
 	end
 
 	def destinations_on_the_rise
