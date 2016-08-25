@@ -1,4 +1,13 @@
-
+require_relative './beaches'
+require_relative './attractions'
+require_relative './all_inclusive_resorts'
+require_relative './destinations'
+require_relative './destinations_on_the_rise'
+require_relative './hotels'
+require_relative './islands'
+require_relative './landmarks'
+require_relative './museums'
+require_relative './restaurants'
 
 class Travel::Scraper
 	
@@ -10,7 +19,7 @@ class Travel::Scraper
       "destinations",
       "destinations_on_the_rise",
       "islands",
-      "landsmarks",
+      "landmarks",
       "museums",
       "restaurants"
     ]
@@ -119,7 +128,7 @@ class Travel::Scraper
     end   
   end
 
-  def landsmarks
+  def landmarks
     self. scrape_landmarks
   end
 
@@ -163,5 +172,6 @@ class Travel::Scraper
       cuisine = winner.css(".cuisineTypes").text
       Restaurant.new(name, location, cuisines)
     end
+  end
 
 end

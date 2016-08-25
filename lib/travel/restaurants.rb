@@ -1,5 +1,5 @@
 class Restaurant
-	att_accessor :name, :location, :cuisine
+	attr_accessor :name, :location, :cuisine
 
   def initialize(name, location, cuisine)
     @name = name

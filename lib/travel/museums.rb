@@ -1,5 +1,5 @@
 class Museum
-	att_accessor :name, :location
+	attr_accessor :name, :location
 
   def initialize(name, location)
     @name = name
