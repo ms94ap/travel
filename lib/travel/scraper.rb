@@ -1,5 +1,6 @@
 require_relative './beaches'
 require_relative './attractions'
+require_relative './all_inclusive_resorts'
 
 class Travel::Scraper
 	
@@ -7,6 +8,7 @@ class Travel::Scraper
     [
       "beaches",
       "attractions"
+      "all_inclusive_resorts"
     ]
   end
 
@@ -18,7 +20,10 @@ class Travel::Scraper
     self.scrape_attractions
   end
 
-	
+  def all_inclusive_resorts
+    self.scrape_all_inclusive_resorts
+  end
+
 
 	def self.scrape_beaches
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-Beaches"))
@@ -43,13 +48,16 @@ class Travel::Scraper
     end
 	end
 
-	# def self.scrape_all_inclusive_resorts
-	# 	doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice"))
-	# 	category =
-	# 	position =
-	# 	name =
-	# 	location =
-	# end
+	def self.scrape_all_inclusive_resorts
+		doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-AllInclusive-cTop-g1"))
+		category = doc.css("h1.laurelhdr").text
+
+    winners = doc.css("div.posRel.tcInner").map do |winner|
+      name = winner.css(".mainName a").first.text
+      location = winner.css(".smaller a").first.text
+      AllInclusiveResort.new(name, location)
+    end
+	end
 
 	# def self.scrape_destinations
 	# 	doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice"))

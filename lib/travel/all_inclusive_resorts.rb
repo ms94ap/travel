@@ -1,1 +1,8 @@
-all_inclusive_resorts.rb
+class AllInclusiveResort
+	attr_accessor :name, :location
+  
+	def initialize(name, location)
+		@name = name 
+		@location = location
+	end
+end

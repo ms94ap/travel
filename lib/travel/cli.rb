@@ -12,8 +12,11 @@ class Travel::CLI
 	end
 
 	def all_inclusive_resorts
-		puts  "All inclusive resorts"
-	end
+    Travel::Scraper.sscrape_all_inclusive_resorts.each.with_index(1) do |winner, index|
+      puts "#{index}: #{winner.name} - #{winner.location}"
+    end
+    return nil
+  end
 
 	def attractions
 		Travel::Scraper.scrape_attractions.each.with_index(1) do |winner, index|
