@@ -79,17 +79,17 @@ class Travel::Scraper
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-Destinations"))
     category = doc.css("h1.laurelhdr").text
 
-    winners = doc.css("div.posRel.tcInner.withMeta.tcActive").map do |winner|
+    winners = doc.css("div.posRel.tcInner").map do |winner|
       name = winner.css(".mainName a").first.text
       Destination.new(name)
     end
   end
 
   def destinations_on_the_rise
-    self.destinations_on_the_rise
+    self.scrape_destinations_on_the_rise
   end
 
-  def self.scrape_desinations_on_the_rise
+  def self.scrape_destinations_on_the_rise
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-DestinationsontheRise"))
     category = doc.css("h1.laurelhdr").text
 
@@ -107,7 +107,7 @@ class Travel::Scraper
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-Hotels"))
     category = doc.css("h1.laurelhdr").text
 
-    winners = doc.css("div.posRel.tcInner.tcActive").map do |winner|
+    winners = doc.css("div.posRel.tcInner").map do |winner|
       name = winner.css(".mainName.extra a").first.text
       location = winner.css(".smaller a").first.text
       Hotel.new(name, location)
@@ -122,7 +122,7 @@ class Travel::Scraper
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-Islands"))
     category = doc.css("h1.laurelhdr").text
 
-    winners = doc.css("div.posRel.tcInner.tcActive").map do |winner|
+    winners = doc.css("div.posRel.tcInner").map do |winner|
       name = winner.css(".mainName a").first.text
       Island.new(name)
     end   
@@ -151,7 +151,7 @@ class Travel::Scraper
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-Museums"))
     category = doc.css("h1.laurelhdr").text
 
-    winners = doc.css("div.posRel.tcInner.tcActive").map do |winner|
+    winners = doc.css("div.posRel.tcInner").map do |winner|
       name = winner.css(".mainName.extra a").first.text
       location = winner.css(".smaller a").first.text
       Museum.new(name, location)
@@ -164,13 +164,13 @@ class Travel::Scraper
 
   def self.scrape_restaurants
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/TravelersChoice-Restaurants"))
-    ategory = doc.css("h1.laurelhdr").text
+    category = doc.css("h1.laurelhdr").text
     
     winners = doc.css("div.posRel.tcInner").map do |winner|
       name = winner.css(".mainName a").first.text
       location = winner.css(".smaller a").first.text
       cuisine = winner.css(".cuisineTypes").text
-      Restaurant.new(name, location, cuisines)
+      Restaurant.new(name, location, cuisine)
     end
   end
 
