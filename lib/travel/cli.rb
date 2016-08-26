@@ -2,47 +2,76 @@ class Travel::CLI
 
 	def call 
 		puts "Welcome to World Travelers'Awards for #{Time.now.year}"
-    start
-		#list
+    list_awards
+    menu
+    goodbye
+	
 	end
-
-	def start
-		puts "please select category" 
-    
-		input = gets.strip.to_i
-	end
+  
+  def list_awards
+    puts "Please select a category or type exit."
+    puts <<-DOC
+      1 - All Inclusive Resorts,
+      2 - Attractions,
+      3 - Beaches,
+      4 - Destinations,
+      5 - Destinations on the Rise,
+      6 - Hotels,
+      7 - Islands,
+      8 - Landmarks,
+      9 - Museums,
+      10 - Restaurants
+      DOC
+  end
+	
 
   def menu
     input = nil
-    while input != exit
-      puts "enter the number of the Award you wish to see"
-      input = gets.strip
+    puts "Enter the number of the Award you wish to see"
+    while input != "exit"
+      input = gets.strip.downcase
       case input
       when "1"
         puts "All Inclusive Resorts"
+        puts all_inclusive_resorts
       when "2"
-        puts "Attractions"
+        puts"Attractions"
+        puts attractions
       when "3"
-        puts "Beaches"
+        puts"Beaches"
+        puts beaches
       when "4"
-        puts "Destinations"
+        puts"Destinations"
+        puts destinations
       when "5"
-        puts "Destinations on the rise"
+        puts"Destinations on the Rise"
+        puts destinations_on_the_rise
       when "6"
-        puts "Hotels"
+        puts"Hotels"
+        puts hotels
       when "7"
-        puts "Islands"
+        puts"Islands"
+        puts islands
       when "8"
-        puts "Landmarks"
+        puts"Landmarks"
+        puts landmarks
       when "9"
-        puts "Museums"
+        puts"Museums"
+        puts museums
       when "10"
-        puts "Restaurants"
+        puts"Restaurants"
+        puts restaurants
       else
         puts "Type List or Exit"
       end
     end
 
+  end
+
+  
+
+  def goodbye
+    puts "Thank you for visiting Travelers Choice Awards. Have a nice day!"
   end
 
 	def all_inclusive_resorts

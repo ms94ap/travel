@@ -10,20 +10,6 @@ require_relative './museums'
 require_relative './restaurants'
 
 class Travel::Scraper
-	
-  def list
-    [
-      "beaches",
-      "attractions",
-      "all_inclusive_resorts",
-      "destinations",
-      "destinations_on_the_rise",
-      "islands",
-      "landmarks",
-      "museums",
-      "restaurants"
-    ]
-  end
 
   def beaches
     self.scrape_beaches
