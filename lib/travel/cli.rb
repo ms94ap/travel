@@ -10,24 +10,13 @@ class Travel::CLI
   
   def list_awards
     puts "Please select a category or type exit."
-    puts <<-DOC
-      1 - All Inclusive Resorts,
-      2 - Attractions,
-      3 - Beaches,
-      4 - Destinations,
-      5 - Destinations on the Rise,
-      6 - Hotels,
-      7 - Islands,
-      8 - Landmarks,
-      9 - Museums,
-      10 - Restaurants
-      DOC
+    @lists = Travel::List.choices_awards
   end
 	
 
   def menu
     input = nil
-    puts "Enter the number of the Award you wish to see"
+    puts "Enter the number of the Award you wish to see, list to see the main menu or type exit."
     while input != "exit"
       input = gets.strip.downcase
       case input
@@ -61,8 +50,10 @@ class Travel::CLI
       when "10"
         puts"Restaurants"
         puts restaurants
+      when "list"
+        list_awards
       else
-        puts "Type List or Exit"
+        puts "Please type list or exit"
       end
     end
 
