@@ -9,8 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["ms94ap"]
   spec.email         = ["a_papacostas@yahoo.com"]
 
-  spec.summary       = "Gem for best vacations"
-  spec.description   = "Travel Advisor"
+  spec.summary       = "This is a gem for www.tripadvisor.com World Travelers' Choice Awards"
+  spec.description   = "It includes information for: Attractions, Beaches, All Inclusive Resorts, Destinations, 
+                        Destinations on the Rise, Hotels, Islands, Landmarks, Museums and Restaurants."
   spec.homepage      = "https://github.com/ms94ap/travel"
   spec.license       = "MIT"
 
