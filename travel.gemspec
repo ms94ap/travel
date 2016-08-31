@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/ms94ap/travel-cli-gem"
   spec.license       = "MIT"
 
-  spec.files         = ["lib/travel.rb", "lib/travel/all_inclusive_resorts.rb", "lib/travel/attractions.rb", "lib/travel/beaches.rb", "lib/travel/cli.rb", "lib/travel/destinations.rb", "lib/travel/destinations_on_the_rise.rb", "lib/travel/hotels.rb", "lib/travel/islands.rb","lib/travel/landmarks.rb", "lib/travel/list.rb" "lib/travel/museums.rb", "lib/travel/restaurants.rb", "lib/travel/scraper.rb", "lib/travel/version.rb", "bin/console", "bin/setup", "bin/travel"]
+  spec.files         = ["lib/travel.rb", "lib/travel/all_inclusive_resorts.rb", "lib/travel/attractions.rb", "lib/travel/beaches.rb", "lib/travel/cli.rb", "lib/travel/destinations.rb", "lib/travel/destinations_on_the_rise.rb", "lib/travel/hotels.rb", "lib/travel/islands.rb","lib/travel/landmarks.rb", "lib/travel/list.rb", "lib/travel/museums.rb", "lib/travel/restaurants.rb", "lib/travel/scraper.rb", "lib/travel/version.rb", "bin/console", "bin/setup", "bin/travel"]
 
   spec.bindir        = "bin"
   spec.executables   = "travel"
