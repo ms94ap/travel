@@ -1,6 +1,7 @@
 
 class Travel::Scraper
 
+
   
 
   def self.scrape_beaches

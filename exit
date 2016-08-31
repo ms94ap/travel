@@ -1,0 +1,61 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 74fdca2..6f332ac 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -1,8 +1,8 @@[m
+ # Travel[m
+ [m
+[31m-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/travel`. To experiment with that code, run `bin/console` for an interactive prompt.[m
+[32m+[m[32mIt includes information for: Attractions, Beaches, All Inclusive Resorts, Destinations,[m[41m [m
+[32m+[m[32mDestinations on the Rise, Hotels, Islands, Landmarks, Museums and Restaurants.[m
+ [m
+[31m-TODO: Delete this and the text above, and describe your gem[m
+ [m
+ ## Installation[m
+ [m
+[36m@@ -20,9 +20,7 @@[m [mOr install it yourself as:[m
+ [m
+     $ gem install travel[m
+ [m
+[31m-## Usage[m
+ [m
+[31m-TODO: Write usage instructions here[m
+ [m
+ ## Development[m
+ [m
+[1mdiff --git a/bin/travel b/bin/travel[m
+[1mindex ca456a5..dded076 100755[m
+[1m--- a/bin/travel[m
+[1m+++ b/bin/travel[m
+[36m@@ -2,5 +2,4 @@[m
+ [m
+ require "bundler/setup"[m
+ require "travel"[m
+[31m-Travel::CLI.new.call[m
+[31m-[m
+[32m+[m[32mTravel::CLI.new.call[m
+\ No newline at end of file[m
+[1mdiff --git a/lib/travel/list.rb b/lib/travel/list.rb[m
+[1mindex 68079e1..3300fe3 100644[m
+[1m--- a/lib/travel/list.rb[m
+[1m+++ b/lib/travel/list.rb[m
+[36m@@ -1,6 +1,7 @@[m
+ class Travel::List[m
+ [m
+ 	def self.choices_awards[m
+[32m+[m
+ 		puts <<-DOC[m
+       1 - All Inclusive Resorts,[m
+       2 - Attractions,[m
+[1mdiff --git a/lib/travel/scraper.rb b/lib/travel/scraper.rb[m
+[1mindex 6892f55..7228daf 100644[m
+[1m--- a/lib/travel/scraper.rb[m
+[1m+++ b/lib/travel/scraper.rb[m
+[36m@@ -1,6 +1,7 @@[m
+ [m
+ class Travel::Scraper[m
+ [m
+[32m+[m
+   [m
+ [m
+   def self.scrape_beaches[m

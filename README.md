@@ -1,8 +1,8 @@
 # Travel
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/travel`. To experiment with that code, run `bin/console` for an interactive prompt.
+It includes information for: Attractions, Beaches, All Inclusive Resorts, Destinations, 
+Destinations on the Rise, Hotels, Islands, Landmarks, Museums and Restaurants.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -20,9 +20,7 @@ Or install it yourself as:
 
     $ gem install travel
 
-## Usage
 
-TODO: Write usage instructions here
 
 ## Development
 

@@ -1,6 +1,7 @@
 class Travel::List
 
 	def self.choices_awards
+
 		puts <<-DOC
       1 - All Inclusive Resorts,
       2 - Attractions,
