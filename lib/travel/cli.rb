@@ -4,7 +4,6 @@ class Travel::CLI
 		puts "Welcome to World Travelers'Awards for #{Time.now.year}"
     list_awards
     menu
-    goodbye
 	
 	end
   
@@ -16,44 +15,48 @@ class Travel::CLI
 
   def menu
     input = nil
-    puts "Enter the number of the Award you wish to see, list to see the main menu or type exit."
+    
     while input != "exit"
+      puts "Enter the number of the Award you wish to see, list to see the main menu or type exit."
       input = gets.strip.downcase
       case input
+      
       when "1"
         puts "All Inclusive Resorts"
-        puts all_inclusive_resorts
+        all_inclusive_resorts
       when "2"
         puts"Attractions"
-        puts attractions
+        attractions
       when "3"
         puts"Beaches"
-        puts beaches
+        beaches
       when "4"
         puts"Destinations"
-        puts destinations
+        destinations
       when "5"
         puts"Destinations on the Rise"
-        puts destinations_on_the_rise
+        destinations_on_the_rise
       when "6"
         puts"Hotels"
-        puts hotels
+        hotels
       when "7"
         puts"Islands"
-        puts islands
+        islands
       when "8"
         puts"Landmarks"
-        puts landmarks
+        landmarks
       when "9"
         puts"Museums"
-        puts museums
+        museums
       when "10"
         puts"Restaurants"
-        puts restaurants
+        restaurants
       when "list"
         list_awards
+      when "exit"
+        goodbye
       else
-        puts "Please type list or exit"
+        puts "Wrong Number!!!"
       end
     end
 
@@ -63,6 +66,7 @@ class Travel::CLI
 
   def goodbye
     puts "Thank you for visiting Travelers Choice Awards. Have a nice day!"
+    exit
   end
 
 	def all_inclusive_resorts
