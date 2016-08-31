@@ -6,19 +6,15 @@ Destinations on the Rise, Hotels, Islands, Landmarks, Museums and Restaurants.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'travel'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install by running the following:
 
     $ gem install travel
+
+## Usage
+
+Type the below and follow the on screen prompts.
+
+$ travel
 
 
 
