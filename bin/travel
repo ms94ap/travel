@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "travel"
+require_relative "../lib/travel"
 Travel::CLI.new.call

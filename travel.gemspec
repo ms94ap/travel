@@ -6,20 +6,19 @@ require 'travel/version'
 Gem::Specification.new do |spec|
   spec.name          = "travel"
   spec.version       = Travel::VERSION
-  spec.authors       = ["ms94ap"]
+  spec.authors       = ["Andrew Papacostas"]
   spec.email         = ["a_papacostas@yahoo.com"]
 
   spec.summary       = "This is a gem for www.tripadvisor.com World Travelers' Choice Awards"
   spec.description   = "It includes information for: Attractions, Beaches, All Inclusive Resorts, Destinations, 
                         Destinations on the Rise, Hotels, Islands, Landmarks, Museums and Restaurants."
-  spec.homepage      = "https://github.com/ms94ap/travel-cli-gem"
+  spec.homepage      = "https://github.com/ms94ap/travel"
   spec.license       = "MIT"
 
-  spec.files         = ["lib/travel.rb", "lib/travel/all_inclusive_resorts.rb", "lib/travel/attractions.rb", "lib/travel/beaches.rb", "lib/travel/cli.rb", "lib/travel/destinations.rb", "lib/travel/destinations_on_the_rise.rb", "lib/travel/hotels.rb", "lib/travel/islands.rb","lib/travel/landmarks.rb", "lib/travel/list.rb", "lib/travel/museums.rb", "lib/travel/restaurants.rb", "lib/travel/scraper.rb", "lib/travel/version.rb", "bin/console", "bin/setup", "bin/travel"]
-
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "bin"
-  spec.executables   = "travel"
-  spec.require_paths = ["lib"]
+  spec.executables   = ["travel"]
+  spec.require_paths = "lib"
 
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
