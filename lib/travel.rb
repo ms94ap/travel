@@ -1,4 +1,7 @@
-#require "pry"
+module Travel
+end
+
+
 require "nokogiri"
 require "open-uri"
 
